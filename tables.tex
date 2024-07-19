@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage[skip=0pt]{caption}
+\usepackage[labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\fontfamily{georgia}\selectfont
+\usepackage[flushleft]{threeparttable}
+
+\begin{document}
+
+For stock \(i\), the return on the \(d\)-th day of month \(t\) is denoted as \(r_{t,d,i}\), and the market return on the same day is represented by \(m_{t,d}\). The month \(t\) comprises \(D_t\) trading days. The positive returns for the stock are calculated as \(r_{+t,d,i} = \max(r_{t,d,i}, 0)\), and the negative returns as \(r_{-t,d,i} = \min(r_{t,d,i}, 0)\). Similarly, the market’s positive and negative daily returns are \(m_{+t,d} = \max(m_{t,d}, 0)\) and \(m_{-t,d} = \min(m_{t,d}, 0)\), respectively. Daily returns are determined by the change in closing prices relative to the closing price of the previous day.
+
+
+
+\begin{equation}
+r_{t+1,i} = \theta^C_{t+1} + \theta^N_{t+1} \beta^N_{t,i} + \theta^P_{t+1} \beta^P_{t,i} + \theta^{M+}_{t+1} \beta^{M+}_{t,i} + \theta^{M-}_{t+1} \beta^{M-}_{t,i} + \epsilon_{t+1,i}
+\end{equation}
+
+
+
+\begin{table}[h]
+    \centering
+    \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=false}
+    \caption*{\textbf{Table 5}\\Fama-Macbeth regressions for crisis subsamples}
+    \label{tab:comparison_sub_periods}
+    \scalebox{0.75}{
+        \begin{threeparttable}
+            \begin{tabular}{l@{\extracolsep{0em}}cccccc}
+                \toprule
+                & Non-crisis (KOSPI)&  Crisis (KOSPI)&Non-crisis (KOSDAQ)& Crisis (KOSDAQ) & Non-crisis (Overall)&Crisis (Overall)\\
+                \midrule
+                Constant & 1.95**& -2.23&2.36***& -1.73& 2.21***&-2.13\\
+                         & (2.22)& (-1.66)&(3.33)& (-1.32)& (2.97)&(-1.47)\\[0.5em]
+                $\beta^N$ & -0.34& -1.33&-1.18**& -0.51& -0.73*&-0.82\\
+                          & (-0.46)& (-1.14)&(-2.22)& (-0.38)& (-1.75)&(-0.78)\\[0.5em]
+                $\beta^P$ & 1.02**& -0.28&0.57& -2.18**& 0.45&-1.22\\
+                          & (2.48)& (-0.37)&(1.14)& (-2.22)& (1.00)&(-1.27)\\[0.5em]
+                $\beta^{M+}$ & -0.87& 3.13&-0.42& 1.41& 0.13&2.54\\
+                            & (-0.87)& (0.73)&(-0.26)& (0.39)& (0.11)&(0.66)\\[0.5em]
+                $\beta^{M-}$ & -0.48& -4.25**&-0.56& -1.48& 0.27&-1.43\\
+                             & (-0.65)& (-2.00)&(-1.34)& (-0.74)& (0.80)&(-1.08)\\
+                \midrule
+                $R^2$ (\%) &  3.00& 5.79&1.95& 3.58& 1.84&3.92\\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item This table displays the Fama-Macbeth regression results for the crisis and non-crisis subsamples of each market sample (KOSPI, KOSDAQ, Overall). MKF2000 index is used as a benchmark for the overall market. The displayed coefficient estimates are monthly risk premium (\%) for each semibeta. The reported R-squared is a time-series average of all R-squared attained from rolling cross-sectional regressions. Newey–West robust t-statistics are shown in parentheses. ***, **, and * indicate significance at 1\%, 5\%, and 10\% levels respectively.
+            \end{tablenotes}
+        \end{threeparttable}
+    }
+\end{table}
+
+
+
+
+\begin{table}[h]
+    \begin{threeparttable}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+    \caption*{\textbf{Table 4}\\Fama-Macbeth regressions.}
+    \label{tab:comparison_sub_periods}
+    \begin{tabular}{l@{\extracolsep{8em}}ccc}
+        \toprule
+        & KOSPI & KOSDAQ & Overall \\
+        \midrule
+        Constant & 1.17*** & 2.18** & 1.03** \\
+                 & (3.18) & (2.29) & (2.29) \\[0.5em]
+        $\beta$ & 0.26* & 0.05 & 0.38** \\
+                & (1.69) & (0.12) & (2.57) \\
+        \midrule
+        $R^2$ (\%) & 2.98 & 1.37 & 1.10 \\
+        \midrule
+        Constant & 1.17*** & 2.87*** & 1.52*** \\
+                 & (3.33) & (3.34) & (3.65) \\[0.5em]
+        $\beta^N$ & 1.08** & 0.60 & 0.23 \\
+                  & (2.14) & (0.62) & (0.60) \\[0.5em]
+        $\beta^P$ & -0.84** & -1.68** & -0.62** \\
+                  & (-2.69) & (-2.55) & (-2.04) \\[0.5em]
+        $\beta^{M+}$ & 1.12* & 1.16 & 0.46 \\
+                    & (1.85) & (1.24) & (0.62) \\[0.5em]
+        $\beta^{M-}$ & -0.93& -2.05*** & -2.04*** \\
+                     & (-1.67) & (-2.93) & (-5.42) \\
+        \midrule
+        $R^2$ (\%) & 6.93 & 3.92 & 3.20 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item This table displays the Fama-Macbeth regression results for the three market samples (KOSPI, KOSDAQ, Overall). MKF2000 index is used as a benchmark for the overall market. The displayed coefficient estimates are monthly risk premium (\%) for each semibeta. The reported R-squared is a time-series average of all R-squared attained from rolling cross-sectional regressions. Newey–West robust t-statistics are shown in parentheses. ***, **, and * indicate significance at 1\%, 5\%, and 10\% levels respectively.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+
+\begin{table}[h]
+    \begin{threeparttable}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+    \caption*{\textbf{Table 1}\\Summary statistics: KOSPI.}
+    \label{tab:summary_statistics}
+    \begin{tabular}{l@{\extracolsep{4em}}cccccc}
+        \toprule
+        & $\beta$ & $\beta^N$ & $\beta^P$ & $\beta^{M+}$ & $\beta^{M-}$ \\
+        \midrule
+        Mean & 0.71 & 0.52 & 0.58 & 0.20 & 0.19 \\
+        Median & 0.64 & 0.47 & 0.49 & 0.14 & 0.12 \\
+        St.Dev. & 0.68 & 0.32 & 0.40 & 0.20 & 0.24 \\
+        \midrule
+        \multicolumn{6}{c}{Correlation matrix} \\
+        \midrule
+        $\beta$ & 1.00 & & & & \\
+        $\beta^N$ & 0.61 & 1.00 & & & \\
+        $\beta^P$ & 0.59 & 0.14 & 1.00 & & \\
+        $\beta^{M+}$ & -0.30 & 0.06 & 0.23 & 1.00 & \\
+        $\beta^{M-}$ & -0.32 & 0.10 & 0.20 & 0.36 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item This table displays the summary statistics of monthly realized semibetas calculated with daily stock returns. Data sample consists of all KOSPI constituent stocks from January 1980 to May 2024.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[h]
+    \begin{threeparttable}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+    \caption*{\textbf{Table 2}\\Summary statistics: KOSDAQ.}
+    \label{tab:summary_statistics}
+    \begin{tabular}{l@{\extracolsep{4em}}cccccc}
+        \toprule
+        & $\beta$ & $\beta^N$ & $\beta^P$ & $\beta^{M+}$ & $\beta^{M-}$ \\
+        \midrule
+        Mean & 0.77 & 0.63 & 0.63 & 0.25 & 0.25 \\
+        Median & 0.71 & 0.56 & 0.51 & 0.17 & 0.13 \\
+        Std.Dev. & 0.78 & 0.42 & 0.48 & 0.26 & 0.36 \\
+        \midrule
+        \multicolumn{6}{c}{Correlation matrix} \\
+        \midrule
+        $\beta$ & 1.00 & & & & \\
+        $\beta^N$ & 0.60 & 1.00 & & & \\
+        $\beta^P$ & 0.56 & 0.12 & 1.00 & & \\
+        $\beta^{M+}$ & -0.24 & 0.07 & 0.34 & 1.00 & \\
+        $\beta^{M-}$ & -0.32 & 0.11 & 0.24 & 0.37 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item This table displays the summary statistics of monthly realized semibetas calculated with daily stock returns. Data sample consists of all KOSDAQ constituent stocks from July 1996 to May 2024.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[h]
+    \begin{threeparttable}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+    \caption*{\textbf{Table 3}\\Summary statistics: Overall.}
+    \label{tab:summary_statistics}
+    \begin{tabular}{l@{\extracolsep{4em}}cccccc}
+        \toprule
+        & $\beta$ & $\beta^N$ & $\beta^P$ & $\beta^{M+}$ & $\beta^{M-}$ \\
+        \midrule
+        Mean & 0.76 & 0.63 & 0.64 & 0.26 & 0.25 \\
+        Median & 0.72 & 0.58 & 0.53 & 0.19 & 0.14 \\
+        Std. Dev. & 0.78 & 0.38 & 0.47 & 0.26 & 0.34 \\
+        \midrule
+        \multicolumn{6}{c}{Correlation matrix} \\
+        \midrule
+        $\beta$ & 1.00 & & & & \\
+        $\beta^N$ & 0.60 & 1.00 & & & \\
+        $\beta^P$ & 0.53 & 0.14 & 1.00 & & \\
+        $\beta^{M+}$ & -0.31 & 0.07 & 0.29 & 1.00 & \\
+        $\beta^{M-}$ & -0.36 & 0.09 & 0.24 & 0.36 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \item This table displays the summary statistics of monthly realized semibetas calculated with daily stock returns. Data sample consists of all MKF2000 index constituent stocks from January 2000 to May 2024.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\end{document}
+
